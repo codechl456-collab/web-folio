@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
 :root {
   --bg: #f4f3ef;
   --fg: #141414;
@@ -53,6 +55,9 @@ body {
   font-weight: 500;
   line-height: 1;
   letter-spacing: -0.25rem;
+}
+.lp-intro .lp-heading,.footer-brand{
+  font-family: 'Bebas Neue', cursive;
 }
 .text-section {
   position: relative;
@@ -1068,21 +1073,16 @@ html.lenis {
   }
 }
 
-/* small helper when menu is open:
-   keep the vertical scrollbar visible to avoid layout shifts when the overlay opens.
-   We still prevent horizontal overflow. If you want to fully lock scrolling while
-   keeping the scrollbar visible, we can add a JS scroll-lock that fixes the body
-   position instead of using overflow: hidden. */
 body.menu-open {
   overflow-x: hidden;
-  overflow-y: scroll; /* keep y-axis (vertical) scrollbar visible */
+  overflow-y: scroll;
 }
 
-/* Landing page scoped typography */
+/* Landing page */
 .lp-heading {
   font-size: 4rem;
   font-weight: 500;
-  line-height: 1;
+  line-height: 0.8;
 }
 
 .lp-text {
@@ -1096,7 +1096,6 @@ body.menu-open {
 .lp-outro {
   position: relative;
   width: 100%;
-  /* 🧩 Mobile Chrome viewport fix applied (stable vh) */
   height: calc(var(--vh) * 100);
   padding: 2rem;
   background: var(--bg);
@@ -1407,11 +1406,27 @@ body.menu-open {
 }
 .lp-intro .lp-heading {
   width: 80%;
-  font-size: 7.5rem;
+  font-size: 13rem;
   margin: 0 auto;
 }
 .lp-name {
-  color: #444444;
+  color: #ffffff;
+  -webkit-text-fill-color: #ffffff; 
+  text-fill-color: #ffffff;
+  -webkit-text-stroke: 3px #000000; 
+  text-stroke: 3px #000000; 
+
+  text-shadow:
+    -2px 0 0 #000,
+    2px 0 0 #000,
+    0 -2px 0 #000,
+    0 2px 0 #000,
+    -1px -1px 0 #000,
+    1px 1px 0 #000,
+    -1px 1px 0 #000,
+    1px -1px 0 #000;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 .lp-sticky {
   display: flex;
@@ -1558,8 +1573,8 @@ body.menu-open {
   flex-direction: column;
 }
 .footer-brand {
-  font-weight: 700;
-  font-size: 1.125rem;
+  font-weight: 300;
+  font-size: 1.5rem;
   margin: 0 0 0.25rem 0;
 }
 .footer-copy {
@@ -1630,7 +1645,7 @@ body.menu-open {
     font-size: 3.5rem !important;
   }
   .lp-intro .lp-heading {
-    font-size: 7rem !important;
+    font-size: 8.5rem !important;
   }
   .portfolio-heading{
     font-size: 2.8rem !important;
@@ -1643,7 +1658,7 @@ body.menu-open {
     height:50px;
   }
   .lp-intro .lp-heading {
-    font-size: 5rem !important;
+    font-size: 6.5rem !important;
   }
   .lp-cta,
   .lp-resume {
@@ -1651,14 +1666,19 @@ body.menu-open {
   }
 }
 @media (max-width: 480px) {
+  .top-socials{
+    display:none;
+  }
     .contact-container {
     padding: 0 1rem;
   }
   .about-hero, .about-outro{
     padding:1rem !important;
   }
-  .lp-intro .lp-heading,
-  .lp-sticky .lp-heading {
+  .lp-intro .lp-heading{
+    font-size: 5.5rem !important;
+  }
+   .lp-sticky .lp-heading {
     font-size: 3rem !important;
   }
   .lp-text {
@@ -1679,25 +1699,17 @@ body.menu-open {
     justify-content: center;
   }
   .stat-item {
-  width:130px;
-  height:130px;
+  width:110px;
+  height:110px;
 }
 
 .stat-number {
   font-size: 1.8rem;
-  font-weight: 800;
-  color: #ffffff;
-  margin-bottom: 0.5rem;
-  background: black;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
 
 .stat-label {
   font-size: 0.7rem;
-  color: #888888;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  width:90%;
+  margin: 0 auto;
 }
 }
